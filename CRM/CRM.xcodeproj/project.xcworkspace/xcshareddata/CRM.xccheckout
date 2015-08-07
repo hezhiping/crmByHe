@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3FEC2362-D967-4DE7-9BF1-4554494CA760</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CRM</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>61ED9E27B8D52119BADFFD09DD9275ABD16B14EF</key>
+		<string>https://github.com/SixGodFlowerWater/CrmGod.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CRM/CRM.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>61ED9E27B8D52119BADFFD09DD9275ABD16B14EF</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SixGodFlowerWater/CrmGod.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>61ED9E27B8D52119BADFFD09DD9275ABD16B14EF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>61ED9E27B8D52119BADFFD09DD9275ABD16B14EF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CrmGod</string>
+		</dict>
+	</array>
+</dict>
+</plist>

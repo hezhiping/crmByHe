@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		041C6AA01B73867100B059CB /* contactActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041C6A9F1B73867100B059CB /* contactActivityView.xib */; };
+		041C6AA21B7386B300B059CB /* contactDetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041C6AA11B7386B300B059CB /* contactDetailInfoView.xib */; };
+		041C6AA51B738BBE00B059CB /* contactDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041C6AA41B738BBE00B059CB /* contactDetailInfoViewController.m */; };
+		042B1F5F1B723BE1007D7114 /* dateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1F5E1B723BE1007D7114 /* dateToString.m */; };
+		044837931B7040A200FE78F3 /* softUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 044837921B7040A200FE78F3 /* softUser.m */; };
+		044A6CDD1B70F30000567754 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A6CDC1B70F30000567754 /* ContactViewController.m */; };
+		04A05ED21B6F13EB0005B637 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A05ED11B6F13EB0005B637 /* loginViewController.m */; };
+		04A05ED61B6F14EA0005B637 /* crmSoap.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A05ED51B6F14EA0005B637 /* crmSoap.m */; };
+		04A605121B708FF000E4D572 /* myCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A605101B708FF000E4D572 /* myCustomerTableViewController.m */; };
+		04A605131B708FF000E4D572 /* myCustomerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A605111B708FF000E4D572 /* myCustomerTableViewController.xib */; };
+		04A7BEB11B72E9B5008012B0 /* LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A7BEB01B72E9B5008012B0 /* LayoutViewController.m */; };
+		04B0A2331B739AC600CC2B9E /* contactTableList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B0A2321B739AC600CC2B9E /* contactTableList.plist */; };
+		04B0A2351B739D8000CC2B9E /* contactSection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B0A2341B739D8000CC2B9E /* contactSection.plist */; };
+		04B0A2381B73A56F00CC2B9E /* contactActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0A2371B73A56F00CC2B9E /* contactActivityView.m */; };
+		04E25CED1B71A57B00B1A500 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E25CEC1B71A57B00B1A500 /* AddContactViewController.m */; };
+		E7526E4C1B67504200C6468F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E4B1B67504200C6468F /* main.m */; };
+		E7526E4F1B67504200C6468F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E4E1B67504200C6468F /* AppDelegate.m */; };
+		E7526E521B67504200C6468F /* CRM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7526E501B67504200C6468F /* CRM.xcdatamodeld */; };
+		E7526E551B67504200C6468F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E541B67504200C6468F /* ViewController.m */; };
+		E7526E581B67504200C6468F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7526E561B67504200C6468F /* Main.storyboard */; };
+		E7526E5A1B67504200C6468F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7526E591B67504200C6468F /* Images.xcassets */; };
+		E7526E5D1B67504200C6468F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7526E5B1B67504200C6468F /* LaunchScreen.xib */; };
+		E7526E691B67504200C6468F /* CRMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E681B67504200C6468F /* CRMTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7526E631B67504200C6468F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7526E3E1B67504200C6468F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7526E451B67504200C6468F;
+			remoteInfo = CRM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		041C6A9F1B73867100B059CB /* contactActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = contactActivityView.xib; sourceTree = "<group>"; };
+		041C6AA11B7386B300B059CB /* contactDetailInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = contactDetailInfoView.xib; sourceTree = "<group>"; };
+		041C6AA31B738BBE00B059CB /* contactDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contactDetailInfoViewController.h; sourceTree = "<group>"; };
+		041C6AA41B738BBE00B059CB /* contactDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = contactDetailInfoViewController.m; sourceTree = "<group>"; };
+		042B1F5D1B723BE1007D7114 /* dateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dateToString.h; sourceTree = "<group>"; };
+		042B1F5E1B723BE1007D7114 /* dateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dateToString.m; sourceTree = "<group>"; };
+		044837911B7040A200FE78F3 /* softUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = softUser.h; sourceTree = "<group>"; };
+		044837921B7040A200FE78F3 /* softUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = softUser.m; sourceTree = "<group>"; };
+		044A6CDB1B70F30000567754 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		044A6CDC1B70F30000567754 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		04A05ED01B6F13EB0005B637 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		04A05ED11B6F13EB0005B637 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		04A05ED41B6F14EA0005B637 /* crmSoap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crmSoap.h; sourceTree = "<group>"; };
+		04A05ED51B6F14EA0005B637 /* crmSoap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = crmSoap.m; sourceTree = "<group>"; };
+		04A05EDC1B6F53490005B637 /* crmDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crmDelegate.h; sourceTree = "<group>"; };
+		04A6050F1B708FF000E4D572 /* myCustomerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myCustomerTableViewController.h; sourceTree = "<group>"; };
+		04A605101B708FF000E4D572 /* myCustomerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myCustomerTableViewController.m; sourceTree = "<group>"; };
+		04A605111B708FF000E4D572 /* myCustomerTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myCustomerTableViewController.xib; sourceTree = "<group>"; };
+		04A7BEAF1B72E9B5008012B0 /* LayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutViewController.h; sourceTree = "<group>"; };
+		04A7BEB01B72E9B5008012B0 /* LayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutViewController.m; sourceTree = "<group>"; };
+		04B0A2321B739AC600CC2B9E /* contactTableList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = contactTableList.plist; sourceTree = "<group>"; };
+		04B0A2341B739D8000CC2B9E /* contactSection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = contactSection.plist; sourceTree = "<group>"; };
+		04B0A2361B73A56F00CC2B9E /* contactActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contactActivityView.h; sourceTree = "<group>"; };
+		04B0A2371B73A56F00CC2B9E /* contactActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = contactActivityView.m; sourceTree = "<group>"; };
+		04E25CEB1B71A57B00B1A500 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		04E25CEC1B71A57B00B1A500 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		E7526E461B67504200C6468F /* CRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7526E4A1B67504200C6468F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7526E4B1B67504200C6468F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7526E4D1B67504200C6468F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E7526E4E1B67504200C6468F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E7526E511B67504200C6468F /* CRM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRM.xcdatamodel; sourceTree = "<group>"; };
+		E7526E531B67504200C6468F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E7526E541B67504200C6468F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E7526E571B67504200C6468F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7526E591B67504200C6468F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E7526E5C1B67504200C6468F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E7526E621B67504200C6468F /* CRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7526E671B67504200C6468F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7526E681B67504200C6468F /* CRMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRMTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7526E431B67504200C6468F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7526E5F1B67504200C6468F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		041C6A9D1B73856700B059CB /* soap */ = {
+			isa = PBXGroup;
+			children = (
+				042B1F5D1B723BE1007D7114 /* dateToString.h */,
+				042B1F5E1B723BE1007D7114 /* dateToString.m */,
+				044837911B7040A200FE78F3 /* softUser.h */,
+				044837921B7040A200FE78F3 /* softUser.m */,
+				04A05EDC1B6F53490005B637 /* crmDelegate.h */,
+				04A05ED41B6F14EA0005B637 /* crmSoap.h */,
+				04A05ED51B6F14EA0005B637 /* crmSoap.m */,
+			);
+			name = soap;
+			sourceTree = "<group>";
+		};
+		041C6A9E1B73862400B059CB /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				04B0A2361B73A56F00CC2B9E /* contactActivityView.h */,
+				04B0A2371B73A56F00CC2B9E /* contactActivityView.m */,
+				041C6A9F1B73867100B059CB /* contactActivityView.xib */,
+				041C6AA31B738BBE00B059CB /* contactDetailInfoViewController.h */,
+				041C6AA41B738BBE00B059CB /* contactDetailInfoViewController.m */,
+				041C6AA11B7386B300B059CB /* contactDetailInfoView.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		044A6CDA1B70F2D300567754 /* myContact */ = {
+			isa = PBXGroup;
+			children = (
+				044A6CDB1B70F30000567754 /* ContactViewController.h */,
+				044A6CDC1B70F30000567754 /* ContactViewController.m */,
+				04E25CEB1B71A57B00B1A500 /* AddContactViewController.h */,
+				04E25CEC1B71A57B00B1A500 /* AddContactViewController.m */,
+				04A7BEAF1B72E9B5008012B0 /* LayoutViewController.h */,
+				04A7BEB01B72E9B5008012B0 /* LayoutViewController.m */,
+			);
+			name = myContact;
+			sourceTree = "<group>";
+		};
+		04A05ED31B6F13FD0005B637 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04A05ED01B6F13EB0005B637 /* loginViewController.h */,
+				04A05ED11B6F13EB0005B637 /* loginViewController.m */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
+		04E25CEA1B71A51300B1A500 /* myCoustom */ = {
+			isa = PBXGroup;
+			children = (
+				04A6050F1B708FF000E4D572 /* myCustomerTableViewController.h */,
+				04A605101B708FF000E4D572 /* myCustomerTableViewController.m */,
+				04A605111B708FF000E4D572 /* myCustomerTableViewController.xib */,
+			);
+			name = myCoustom;
+			sourceTree = "<group>";
+		};
+		E7526E3D1B67504200C6468F = {
+			isa = PBXGroup;
+			children = (
+				04B0A2341B739D8000CC2B9E /* contactSection.plist */,
+				04B0A2321B739AC600CC2B9E /* contactTableList.plist */,
+				041C6A9D1B73856700B059CB /* soap */,
+				04E25CEA1B71A51300B1A500 /* myCoustom */,
+				041C6A9E1B73862400B059CB /* xib */,
+				044A6CDA1B70F2D300567754 /* myContact */,
+				E7526E481B67504200C6468F /* CRM */,
+				04A05ED31B6F13FD0005B637 /* viewControllers */,
+				E7526E651B67504200C6468F /* CRMTests */,
+				E7526E471B67504200C6468F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E7526E471B67504200C6468F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7526E461B67504200C6468F /* CRM.app */,
+				E7526E621B67504200C6468F /* CRMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7526E481B67504200C6468F /* CRM */ = {
+			isa = PBXGroup;
+			children = (
+				E7526E4D1B67504200C6468F /* AppDelegate.h */,
+				E7526E4E1B67504200C6468F /* AppDelegate.m */,
+				E7526E531B67504200C6468F /* ViewController.h */,
+				E7526E541B67504200C6468F /* ViewController.m */,
+				E7526E561B67504200C6468F /* Main.storyboard */,
+				E7526E591B67504200C6468F /* Images.xcassets */,
+				E7526E5B1B67504200C6468F /* LaunchScreen.xib */,
+				E7526E501B67504200C6468F /* CRM.xcdatamodeld */,
+				E7526E491B67504200C6468F /* Supporting Files */,
+			);
+			path = CRM;
+			sourceTree = "<group>";
+		};
+		E7526E491B67504200C6468F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7526E4A1B67504200C6468F /* Info.plist */,
+				E7526E4B1B67504200C6468F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7526E651B67504200C6468F /* CRMTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7526E681B67504200C6468F /* CRMTests.m */,
+				E7526E661B67504200C6468F /* Supporting Files */,
+			);
+			path = CRMTests;
+			sourceTree = "<group>";
+		};
+		E7526E661B67504200C6468F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7526E671B67504200C6468F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7526E451B67504200C6468F /* CRM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7526E6C1B67504200C6468F /* Build configuration list for PBXNativeTarget "CRM" */;
+			buildPhases = (
+				E7526E421B67504200C6468F /* Sources */,
+				E7526E431B67504200C6468F /* Frameworks */,
+				E7526E441B67504200C6468F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CRM;
+			productName = CRM;
+			productReference = E7526E461B67504200C6468F /* CRM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7526E611B67504200C6468F /* CRMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7526E6F1B67504200C6468F /* Build configuration list for PBXNativeTarget "CRMTests" */;
+			buildPhases = (
+				E7526E5E1B67504200C6468F /* Sources */,
+				E7526E5F1B67504200C6468F /* Frameworks */,
+				E7526E601B67504200C6468F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7526E641B67504200C6468F /* PBXTargetDependency */,
+			);
+			name = CRMTests;
+			productName = CRMTests;
+			productReference = E7526E621B67504200C6468F /* CRMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7526E3E1B67504200C6468F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = crmTeam;
+				TargetAttributes = {
+					E7526E451B67504200C6468F = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					E7526E611B67504200C6468F = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = E7526E451B67504200C6468F;
+					};
+				};
+			};
+			buildConfigurationList = E7526E411B67504200C6468F /* Build configuration list for PBXProject "CRM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E7526E3D1B67504200C6468F;
+			productRefGroup = E7526E471B67504200C6468F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7526E451B67504200C6468F /* CRM */,
+				E7526E611B67504200C6468F /* CRMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7526E441B67504200C6468F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041C6AA21B7386B300B059CB /* contactDetailInfoView.xib in Resources */,
+				E7526E581B67504200C6468F /* Main.storyboard in Resources */,
+				04B0A2331B739AC600CC2B9E /* contactTableList.plist in Resources */,
+				E7526E5D1B67504200C6468F /* LaunchScreen.xib in Resources */,
+				E7526E5A1B67504200C6468F /* Images.xcassets in Resources */,
+				041C6AA01B73867100B059CB /* contactActivityView.xib in Resources */,
+				04A605131B708FF000E4D572 /* myCustomerTableViewController.xib in Resources */,
+				04B0A2351B739D8000CC2B9E /* contactSection.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7526E601B67504200C6468F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7526E421B67504200C6468F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7526E4F1B67504200C6468F /* AppDelegate.m in Sources */,
+				04A605121B708FF000E4D572 /* myCustomerTableViewController.m in Sources */,
+				04A7BEB11B72E9B5008012B0 /* LayoutViewController.m in Sources */,
+				041C6AA51B738BBE00B059CB /* contactDetailInfoViewController.m in Sources */,
+				04B0A2381B73A56F00CC2B9E /* contactActivityView.m in Sources */,
+				04A05ED21B6F13EB0005B637 /* loginViewController.m in Sources */,
+				04E25CED1B71A57B00B1A500 /* AddContactViewController.m in Sources */,
+				04A05ED61B6F14EA0005B637 /* crmSoap.m in Sources */,
+				044A6CDD1B70F30000567754 /* ContactViewController.m in Sources */,
+				E7526E4C1B67504200C6468F /* main.m in Sources */,
+				044837931B7040A200FE78F3 /* softUser.m in Sources */,
+				042B1F5F1B723BE1007D7114 /* dateToString.m in Sources */,
+				E7526E551B67504200C6468F /* ViewController.m in Sources */,
+				E7526E521B67504200C6468F /* CRM.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7526E5E1B67504200C6468F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7526E691B67504200C6468F /* CRMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7526E641B67504200C6468F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7526E451B67504200C6468F /* CRM */;
+			targetProxy = E7526E631B67504200C6468F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7526E561B67504200C6468F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7526E571B67504200C6468F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E7526E5B1B67504200C6468F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7526E5C1B67504200C6468F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7526E6A1B67504200C6468F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E7526E6B1B67504200C6468F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7526E6D1B67504200C6468F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CRM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E7526E6E1B67504200C6468F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CRM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E7526E701B67504200C6468F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CRMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRM.app/CRM";
+			};
+			name = Debug;
+		};
+		E7526E711B67504200C6468F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CRMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRM.app/CRM";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7526E411B67504200C6468F /* Build configuration list for PBXProject "CRM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7526E6A1B67504200C6468F /* Debug */,
+				E7526E6B1B67504200C6468F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7526E6C1B67504200C6468F /* Build configuration list for PBXNativeTarget "CRM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7526E6D1B67504200C6468F /* Debug */,
+				E7526E6E1B67504200C6468F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7526E6F1B67504200C6468F /* Build configuration list for PBXNativeTarget "CRMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7526E701B67504200C6468F /* Debug */,
+				E7526E711B67504200C6468F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E7526E501B67504200C6468F /* CRM.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E7526E511B67504200C6468F /* CRM.xcdatamodel */,
+			);
+			currentVersion = E7526E511B67504200C6468F /* CRM.xcdatamodel */;
+			path = CRM.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E7526E3E1B67504200C6468F /* Project object */;
+}
