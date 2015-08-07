@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8hy-MG-q7h">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -667,7 +667,7 @@
         <!--联系人名称-->
         <scene sceneID="RPz-uD-uLx">
             <objects>
-                <viewController id="8hy-MG-q7h" sceneMemberID="viewController">
+                <viewController id="8hy-MG-q7h" customClass="InspectContactDetailInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cMO-t1-xHp"/>
                         <viewControllerLayoutGuide type="bottom" id="YTF-zN-Ndh"/>
@@ -676,133 +676,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a9q-J5-Ae0">
-                                <rect key="frame" x="16" y="88" width="288" height="29"/>
-                                <segments>
-                                    <segment title="跟进记录"/>
-                                    <segment title="详细资料"/>
-                                </segments>
-                                <connections>
-                                    <segue destination="Meh-vD-uRD" kind="push" id="2mV-KY-uNj"/>
-                                </connections>
-                            </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="     输入记录内容             Lorem ipsum dolor sit er elit lamet, consectetaur " translatesAutoresizingMaskIntoConstraints="NO" id="Te4-0c-9W0">
-                                <rect key="frame" x="0.0" y="380" width="320" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-dY-tUn">
-                                <rect key="frame" x="58" y="477" width="16" height="22"/>
-                                <state key="normal" backgroundImage="next_net_16">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7h-Md-NfX">
-                                <rect key="frame" x="144" y="473" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.73876392361974563" green="0.87082252004182592" blue="0.90828203914141414" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="发布">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ncm-eR-TNs">
-                                <rect key="frame" x="24" y="473" width="26" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="38G-dM-Gwt">
-                                <rect key="frame" x="0.0" y="139" width="320" height="238"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U1w-Mv-hjl">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U1w-Mv-hjl" id="9AM-ko-fZl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-kG-bUa" userLabel="一个分段view">
+                                <rect key="frame" x="0.0" y="232" width="320" height="53"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a9q-J5-Ae0">
+                                        <rect key="frame" x="16" y="12" width="288" height="29"/>
+                                        <segments>
+                                            <segment title="跟进记录"/>
+                                            <segment title="详细资料"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changDataSegment:" destination="8hy-MG-q7h" eventType="valueChanged" id="Xh4-C9-qwf"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88262934689165884" green="0.88141300873817841" blue="0.90265940656565657" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="a9q-J5-Ae0" firstAttribute="top" secondItem="BaT-kG-bUa" secondAttribute="top" constant="12" id="2gQ-9m-10Z"/>
+                                    <constraint firstItem="a9q-J5-Ae0" firstAttribute="leading" secondItem="BaT-kG-bUa" secondAttribute="leading" constant="16" id="UK3-SV-xzX"/>
+                                    <constraint firstAttribute="trailing" secondItem="a9q-J5-Ae0" secondAttribute="trailing" constant="16" id="Z4I-T5-YuN"/>
+                                    <constraint firstAttribute="bottom" secondItem="a9q-J5-Ae0" secondAttribute="bottom" constant="13" id="bZS-4D-jFV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFr-FW-xhc" userLabel="一个view">
+                                <rect key="frame" x="0.0" y="286" width="320" height="282"/>
+                                <color key="backgroundColor" red="0.9108504744" green="0.9700133822" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="详细信息BG" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-j7-udY">
+                                <rect key="frame" x="0.0" y="64" width="320" height="168"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W5n-j7-udY" firstAttribute="top" secondItem="cMO-t1-xHp" secondAttribute="bottom" constant="44" id="2Pr-wb-fPr"/>
+                            <constraint firstItem="W5n-j7-udY" firstAttribute="leading" secondItem="5Ed-Q6-CSB" secondAttribute="leadingMargin" constant="-16" id="2ic-G7-64x"/>
+                            <constraint firstItem="DFr-FW-xhc" firstAttribute="bottom" secondItem="5Ed-Q6-CSB" secondAttribute="bottomMargin" id="3JL-pd-pj3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DFr-FW-xhc" secondAttribute="trailing" constant="-16" id="H5v-zb-ffH"/>
+                            <constraint firstItem="BaT-kG-bUa" firstAttribute="top" secondItem="cMO-t1-xHp" secondAttribute="bottom" constant="212" id="Jk3-Tn-1fQ"/>
+                            <constraint firstItem="DFr-FW-xhc" firstAttribute="top" secondItem="BaT-kG-bUa" secondAttribute="bottom" constant="1" id="OAS-VU-I8b"/>
+                            <constraint firstItem="BaT-kG-bUa" firstAttribute="leading" secondItem="5Ed-Q6-CSB" secondAttribute="leadingMargin" constant="-16" id="Ozq-pd-hzD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W5n-j7-udY" secondAttribute="trailing" constant="-16" id="STn-vX-ILG"/>
+                            <constraint firstItem="DFr-FW-xhc" firstAttribute="top" secondItem="BaT-kG-bUa" secondAttribute="bottom" constant="1" id="VLE-xy-SEr"/>
+                            <constraint firstItem="BaT-kG-bUa" firstAttribute="top" secondItem="W5n-j7-udY" secondAttribute="bottom" id="byt-0m-wzL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BaT-kG-bUa" secondAttribute="trailing" constant="-16" id="rev-4p-BZR"/>
+                            <constraint firstItem="DFr-FW-xhc" firstAttribute="leading" secondItem="5Ed-Q6-CSB" secondAttribute="leadingMargin" constant="-16" id="wSN-nw-t5l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="联系人名称" id="2Cc-c6-zQa">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="eet-2S-3QI"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="blankDataView" destination="DFr-FW-xhc" id="S8a-eZ-xih"/>
+                        <outlet property="mySegment" destination="a9q-J5-Ae0" id="YhK-Bt-VVS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCJ-ZB-hno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="-1102"/>
-        </scene>
-        <!--详细资料-->
-        <scene sceneID="xAg-e3-c2p">
-            <objects>
-                <viewController id="Meh-vD-uRD" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vhu-YL-O12"/>
-                        <viewControllerLayoutGuide type="bottom" id="wDu-a4-NzE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ev8-ad-Xpc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ewb-Ht-NNu">
-                                <rect key="frame" x="16" y="88" width="288" height="29"/>
-                                <segments>
-                                    <segment title="跟进记录"/>
-                                    <segment title="详细资料"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dSa-X9-BHq">
-                                <rect key="frame" x="0.0" y="140" width="320" height="346"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tiF-0A-OOV">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tiF-0A-OOV" id="PCA-fh-VkE">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcl-8g-4xi">
-                                <rect key="frame" x="0.0" y="487" width="320" height="30"/>
-                                <color key="backgroundColor" red="0.55700332139999997" green="0.74814223909999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="编辑资料">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xip-Uj-5Bb" kind="push" id="vSG-x8-xeT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ewb-Ht-NNu" firstAttribute="trailing" secondItem="ev8-ad-Xpc" secondAttribute="trailingMargin" id="08h-8P-6CY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rcl-8g-4xi" secondAttribute="trailing" constant="-16" id="Hk9-R5-w79"/>
-                            <constraint firstItem="Rcl-8g-4xi" firstAttribute="top" secondItem="dSa-X9-BHq" secondAttribute="bottom" constant="1" id="J9j-f5-BzW"/>
-                            <constraint firstItem="Rcl-8g-4xi" firstAttribute="leading" secondItem="ev8-ad-Xpc" secondAttribute="leadingMargin" constant="-16" id="Mux-jP-Pi8"/>
-                            <constraint firstItem="wDu-a4-NzE" firstAttribute="top" secondItem="Rcl-8g-4xi" secondAttribute="bottom" constant="2" id="SqA-Hf-89q"/>
-                            <constraint firstItem="ewb-Ht-NNu" firstAttribute="leading" secondItem="ev8-ad-Xpc" secondAttribute="leadingMargin" id="jPL-7Q-NNW"/>
-                            <constraint firstItem="ewb-Ht-NNu" firstAttribute="top" secondItem="vhu-YL-O12" secondAttribute="bottom" constant="24" id="pnH-Hv-OE3"/>
-                            <constraint firstItem="dSa-X9-BHq" firstAttribute="leading" secondItem="ev8-ad-Xpc" secondAttribute="leadingMargin" constant="-16" id="sTQ-hQ-RfB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dSa-X9-BHq" secondAttribute="trailing" constant="-16" id="u0I-CW-nyr"/>
-                            <constraint firstItem="dSa-X9-BHq" firstAttribute="top" secondItem="ewb-Ht-NNu" secondAttribute="bottom" constant="24" id="v5Q-hU-CdA"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="dSa-X9-BHq" secondAttribute="bottom" constant="82" id="zRQ-l1-8FI"/>
-                            <constraint firstItem="dSa-X9-BHq" firstAttribute="top" secondItem="ewb-Ht-NNu" secondAttribute="bottom" constant="24" id="zxn-R2-42d"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="详细资料" id="FMo-hq-kxU"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4fa-XE-5ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3025" y="-1007"/>
+            <point key="canvasLocation" x="2567" y="-1096"/>
         </scene>
         <!--首页-->
         <scene sceneID="li4-hL-ays">
@@ -1462,7 +1393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPn-eu-uiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3421" y="-1029"/>
+            <point key="canvasLocation" x="3481" y="-1041"/>
         </scene>
         <!--Layout View Controller-->
         <scene sceneID="7WC-5j-VjT">
@@ -1497,6 +1428,7 @@
         <image name="home32PX" width="32" height="32"/>
         <image name="next_net_16" width="16" height="16"/>
         <image name="set32PX" width="32" height="32"/>
+        <image name="详细信息BG" width="1903" height="1091"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

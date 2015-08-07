@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040F9A711B74362A00B8FDD3 /* InspectContactDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040F9A701B74362A00B8FDD3 /* InspectContactDetailInfoViewController.m */; };
 		041C6AA01B73867100B059CB /* contactActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041C6A9F1B73867100B059CB /* contactActivityView.xib */; };
 		041C6AA21B7386B300B059CB /* contactDetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041C6AA11B7386B300B059CB /* contactDetailInfoView.xib */; };
 		041C6AA51B738BBE00B059CB /* contactDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041C6AA41B738BBE00B059CB /* contactDetailInfoViewController.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040F9A6F1B74362A00B8FDD3 /* InspectContactDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectContactDetailInfoViewController.h; sourceTree = "<group>"; };
+		040F9A701B74362A00B8FDD3 /* InspectContactDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectContactDetailInfoViewController.m; sourceTree = "<group>"; };
 		041C6A9F1B73867100B059CB /* contactActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = contactActivityView.xib; sourceTree = "<group>"; };
 		041C6AA11B7386B300B059CB /* contactDetailInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = contactDetailInfoView.xib; sourceTree = "<group>"; };
 		041C6AA31B738BBE00B059CB /* contactDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contactDetailInfoViewController.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 		044A6CDA1B70F2D300567754 /* myContact */ = {
 			isa = PBXGroup;
 			children = (
+				040F9A6F1B74362A00B8FDD3 /* InspectContactDetailInfoViewController.h */,
+				040F9A701B74362A00B8FDD3 /* InspectContactDetailInfoViewController.m */,
 				044A6CDB1B70F30000567754 /* ContactViewController.h */,
 				044A6CDC1B70F30000567754 /* ContactViewController.m */,
 				04E25CEB1B71A57B00B1A500 /* AddContactViewController.h */,
@@ -340,6 +345,7 @@
 				041C6AA51B738BBE00B059CB /* contactDetailInfoViewController.m in Sources */,
 				04B0A2381B73A56F00CC2B9E /* contactActivityView.m in Sources */,
 				04A05ED21B6F13EB0005B637 /* loginViewController.m in Sources */,
+				040F9A711B74362A00B8FDD3 /* InspectContactDetailInfoViewController.m in Sources */,
 				04E25CED1B71A57B00B1A500 /* AddContactViewController.m in Sources */,
 				04A05ED61B6F14EA0005B637 /* crmSoap.m in Sources */,
 				044A6CDD1B70F30000567754 /* ContactViewController.m in Sources */,

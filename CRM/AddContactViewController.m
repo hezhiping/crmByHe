@@ -50,13 +50,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    //注册通知，当在detailVc中选择某个值时将发送这些通知，这边注册通知，接受传过来的额数据
+    //注册通知，当在detailVc中选择某个值时将发送这些通知，这边注册通知，接受传过来的数据
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(SetcustomerNameLabelValue:) name:@"Customer_Name" object:nil];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(SetDepartmentLabelLabelValue:) name:@"Department_Name" object:nil];
