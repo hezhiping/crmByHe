@@ -13,4 +13,7 @@
 @property(strong,nonatomic)NSString *getWhat;//判断该视图是显示那种类型数据
 
 
+@property(strong,nonatomic)NSMutableDictionary *dicOfDepartment;//存取部门信息
+@property(strong,nonatomic)NSMutableDictionary *dicOfcustomerName;//包涵一条客户(公司名称)姓名的信息
+
 @end

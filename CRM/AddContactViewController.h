@@ -10,6 +10,6 @@
 #import "crmDelegate.h"
 
 @interface AddContactViewController : UITableViewController <UITextFieldDelegate,crmDelegate>
-@property(strong,nonatomic)NSDictionary *customerNameDic;//包涵一条客户(公司名称)姓名的信息
+
 @property (weak, nonatomic) IBOutlet UITextField *birthText;    //生日
 @end

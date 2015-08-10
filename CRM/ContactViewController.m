@@ -9,25 +9,99 @@
 #import "ContactViewController.h"
 #import "crmSoap.h"
 #import "softUser.h"
+#import "InspectContactDetailInfoViewController.h"
 
 @interface ContactViewController ()
 @property (strong,nonatomic) NSMutableArray *dataOfContact;
 @property (strong,nonatomic) NSMutableDictionary *contactOfDic;
 @property (strong,nonatomic) crmSoap *soap;
+@property (strong,nonatomic) UIAlertView *myalertview;
 
+@property(strong,nonatomic)NSString *deleteContactID;//删除联系人时联系人的id
+@property(nonatomic,assign)int deleteTimes;//记录删除一条联系人信息供经过多少次，因为删除数据失败时会再次调用删除
 
 @end
 
 @implementation ContactViewController
+
+-(void)deleteContactById:(NSString *)contact_Id
+{
+    crmSoap *soap=[[crmSoap alloc]init];
+    soap.soapDelgate=self;
+    [soap deleteContactById:contact_Id getWhatInfo:@"删除客户信息"];
+    
+}
+
+-(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult getWhatInfo:(NSString *)getwhat{
+    if ([soapresult isEqualToString:@"失败"]) {
+        if ([getwhat isEqualToString:@"获取联系人姓名和id"]) {
+        UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"加载失败%@",soapresult] delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+        [alertview show];
+        }
+    }
+    if ([getwhat isEqualToString:@"删除联系人信息"]) {
+        {//如果删除失败重新删除
+#warning //设置删除失败多少次后应该做什么
+            if (_deleteTimes>2) {//删除两次后还失败vaijiu取消删除
+                UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"删除失败%@",soapresult] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alertview show];
+                [self getTableviewData];//重新获取数据，刷新tableview
+            }
+            else{
+                [self deleteContactById:_deleteContactID];
+                _deleteTimes++;//重新调用删除，所以调用次数加一
+            }
+        }
+    }
+    else
+    {
+        if ([getwhat isEqualToString:@"获取联系人姓名和id"])
+        {
+        
+            NSData *data=[soapresult dataUsingEncoding:NSUTF8StringEncoding];
+            NSError *erro=nil;
+            NSMutableDictionary *dataDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&erro];
+            if (dataDic)
+            {
+                 NSArray *dataA=[dataDic objectForKey:@"result"];
+                _dataOfContact=[NSMutableArray arrayWithArray:dataA];
+                [self.tableView reloadData];
+            
+            }
+            else
+            {
+                UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"" message:soapresult delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alertview show];
+            }
+        }
+        if ([getwhat isEqualToString:@"删除客户信息"])
+        {//删除成功
+            UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"删除成功" message:soapresult delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertview show];
+        }
+    }
+    [self.myalertview dismissWithClickedButtonIndex:0 animated:YES];
+    
+
+}
+
+-(void)doWhenHttpCollecttionFalil:(NSError *) error{
+    UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:nil message:@"加载失败,网络错误" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertview show];
+    [self.myalertview dismissWithClickedButtonIndex:0 animated:YES];
+}
+-(void)getTableviewData
+{
+    softUser *localuser=[softUser sharedLocaluserUserByDictionary:nil];
+    [_soap getContactNameAndIdByUserId:localuser.userId getWhatInfo:@"获取联系人姓名和id"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _soap=[[crmSoap alloc]init];
     _soap.soapDelgate =self;
-    softUser *localUser=[softUser sharedLocaluserUserByDictionary:nil];
-#warning 通过用户id找到联系人的姓名
-    [_soap getContactNameAndIdByUserId:localUser.userId];
+    [self getTableviewData];
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -40,33 +114,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult
-{
-    if ([soapresult isEqualToString:@"失败"]) {
-         NSLog(@"我去");
-        
-    }else {
-         NSLog(@"我去");
-        //数据的编码格式
-        NSData *data=[soapresult dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *error=nil;
-        //解析数据
-        NSMutableDictionary *contactOfDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        //把解析的数据给数组
-        if (contactOfDic) {
-            _dataOfContact=[contactOfDic objectForKey:@"result"];
-            [self.tableView reloadData];
-        }
-    }
-    
-#warning 检查数据
-}
-
--(void)doWhenHttpCollecttionFalil:(NSError *) error
-{
-     NSLog(@"我去111111");
 }
 
 #pragma mark - Table view data source
@@ -107,30 +154,52 @@
 }
 
 //选中的行
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIStoryboard *mainstoryboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    InspectContactDetailInfoViewController *inspectVC=[mainstoryboard instantiateViewControllerWithIdentifier:@"inspectVC"];
+    NSDictionary *dic=[self.dataOfContact objectAtIndex:indexPath.row];
+    NSString *contactid=[dic objectForKey:@"Contact_Id"];
+    inspectVC.contactId=contactid.intValue;
+    
+    [self.navigationController pushViewController:inspectVC animated:YES];
+
 }
 
-/*
+
+
+//添加编辑模式
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+       return YES;
 }
-*/
 
-/*
+
+//删除测试
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        NSInteger row=indexPath.row;
+        _deleteContactID=[[_dataOfContact objectAtIndex:indexPath.row]objectForKey:@"Contact_Id"];
+        [self.dataOfContact removeObjectAtIndex:row];//先删除数组中数据，再删除行
+        //调用删除数据方法
+        [self deleteContactById:_deleteContactID];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
+
+
 
 /*
 // Override to support rearranging the table view.

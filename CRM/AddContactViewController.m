@@ -15,7 +15,7 @@
 @interface AddContactViewController ()
 
 
-@property (weak, nonatomic) IBOutlet UILabel *customerNameLabel;//客户级别标签
+@property (weak, nonatomic) IBOutlet UILabel *customerNameLabel;//公司名称标签
 @property (weak, nonatomic) IBOutlet UILabel *departmentLabel;//创建人部门标签
 @property (weak, nonatomic) IBOutlet UITextField *nameText;     //姓名
 
@@ -26,18 +26,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *telText;      //手机
 @property (weak, nonatomic) IBOutlet UITextField *emailText;    //邮箱
 @property (weak, nonatomic) IBOutlet UITextField *addrText;     //地址
-@property (weak, nonatomic) IBOutlet UILabel *remarkText;       //备注
+@property (weak, nonatomic) IBOutlet UITextView  *remark;        //备注
 
 
 @property (nonatomic,assign)int id;
 
 @property (strong,nonatomic)crmSoap *soap;
+@property(strong,nonatomic)NSDictionary *customerNameDic;//包涵一条客户(公司名称)姓名的信息
 @property(strong,nonatomic)NSDictionary *departmentDic;//包涵一条部门的信息
 
 
-
 - (IBAction)saveOfAddContactBtn:(id)sender;
-
 
 @end
 
@@ -71,10 +70,13 @@
 
 
 
--(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult
+-(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult getWhatInfo:(NSString *)getwhat
 {
     UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"!" message:soapresult delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alertView show];
+    
+    
+    
 }
 -(void)doWhenHttpCollecttionFalil:(NSError *) error
 {
@@ -85,14 +87,14 @@
 
 -(void)SetcustomerNameLabelValue:(NSNotification *) notification
 {
-    _customerNameDic=[notification userInfo];
-    self.customerNameLabel.text=[_customerNameDic  objectForKey:@"Customer_Name"];
+    _customerNameDic=(NSMutableDictionary *)[notification userInfo];
+    self.customerNameLabel.text=[_customerNameDic objectForKey:@"Customer_Name"];
     
 }
 
 -(void)SetDepartmentLabelLabelValue:(NSNotification *) notification
 {
-    _departmentDic=[notification userInfo];
+    _departmentDic=(NSMutableDictionary *)[notification userInfo];
     self.departmentLabel.text=[_departmentDic objectForKey:@"Department_Name"];
 }
 
@@ -112,13 +114,13 @@
     //获取当前用户
     softUser *localUser=[softUser sharedLocaluserUserByDictionary:nil];
     NSString *departId=[_departmentDic objectForKey:@"Department_Id"];
-    NSString *customerId=[_customerNameDic objectForKey:@"Coustomer_Id"];
+    NSString *customerId=[_customerNameDic objectForKey:@"Customer_Id"];
     
     int uid=localUser.userId.intValue;
     NSString *uName=localUser.userName;
     NSString *cDate=[dateToString dateToString:[NSDate date]];
-#warning 部门id
-    [_soap addContact:789654 Name:_nameText.text customId:customerId.intValue userId:uid departmentId:departId.intValue  contactSex:_sexText.text contactBirth:_birthText.text contactPosition:_positionText.text contactPhone:_phoneText.text contactTel:_telText.text mail:_emailText.text Addr:_addrText.text Remark:_remarkText.text department:@"" cDate:cDate cPerson:uName mDate:cDate mPerson:uName];
+#warning 联系人的id应该是获取来的
+    [_soap addContact:nil Name:_nameText.text customId:customerId.intValue userId:uid departmentId:departId.intValue  contactSex:_sexText.text contactBirth:_birthText.text contactPosition:_positionText.text contactPhone:_phoneText.text contactTel:_telText.text mail:_emailText.text Addr:_addrText.text Remark:_remark.text department:@"" cDate:cDate cPerson:uName mDate:cDate mPerson:uName getWhatInfo:@"添加联系人"];
     
 }
 

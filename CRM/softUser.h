@@ -18,6 +18,13 @@
 @property(strong,nonatomic)NSString *userPhone;
 @property(strong,nonatomic)NSString *userDepartment;
 @property(strong,nonatomic)NSString *userPosition;
+
+
+@property(strong,nonatomic)NSMutableDictionary *dicOfDepartment;//存取部门信息
+@property(strong,nonatomic)NSMutableDictionary *dicOfCompanyName;//存储公司信息
+
+
+
 +(softUser *)sharedLocalUseruser:(NSString *)userId Account:(NSString *)account Pwd:(NSString *)pwd PhotoUrl:(NSString *)photoUrl Email:(NSString *)email Phone:(NSString *)phone Department:(NSString *)department Position:(NSString *)positon;
 +(softUser *)sharedLocaluserUserByDictionary:(NSDictionary *) userDic;
 @end

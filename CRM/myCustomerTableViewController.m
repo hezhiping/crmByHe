@@ -20,7 +20,7 @@
 @implementation myCustomerTableViewController
 
 #pragma -mark crmdelegate
--(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult{
+-(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult getWhatInfo:(NSString *)getwhat{
     if ([soapresult isEqualToString:@"失败"]) {
         UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"" message:@"加载失败" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
         [alertview show];
@@ -52,7 +52,7 @@
     _soap=[[crmSoap alloc]init];
     _soap.soapDelgate =self;
     softUser *localuser=[softUser sharedLocaluserUserByDictionary:nil];
-    [_soap getCustomerNameAndIdByUserId:localuser.userId];
+    [_soap getCustomerNameAndIdByUserId:localuser.userId getWhatInfo:@"查询客户"];
     
     self.myalertview=[[UIAlertView alloc]initWithTitle:@"" message:@"正在加载...." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
     [self.myalertview show];

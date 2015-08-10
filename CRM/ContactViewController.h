@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "crmDelegate.h"
-
 @interface ContactViewController : UITableViewController <crmDelegate>
 
 @end

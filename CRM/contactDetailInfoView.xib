@@ -10,34 +10,40 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WSM-br-B8Z">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-DZ-3Zr">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-DZ-3Zr">
                     <rect key="frame" x="0.0" y="526" width="320" height="42"/>
                     <color key="backgroundColor" red="0.9108504744" green="0.9700133822" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="修改信息">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="updateInfoBtn:" destination="8AQ-lS-mCF" eventType="touchUpInside" id="dJ9-8Q-V4q"/>
+                        <action selector="updateContactInfoBtn:" destination="8AQ-lS-mCF" eventType="touchUpInside" id="dPk-Zm-0Qo"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WSM-br-B8Z">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="8AQ-lS-mCF" id="qL5-gj-Eeb"/>
+                        <outlet property="delegate" destination="8AQ-lS-mCF" id="P6x-Im-bVb"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="WSM-br-B8Z" firstAttribute="top" secondItem="8AQ-lS-mCF" secondAttribute="top" id="FSa-bQ-3m0"/>
-                <constraint firstItem="oKJ-DZ-3Zr" firstAttribute="leading" secondItem="8AQ-lS-mCF" secondAttribute="leading" id="NNg-P6-78B"/>
-                <constraint firstItem="oKJ-DZ-3Zr" firstAttribute="top" secondItem="WSM-br-B8Z" secondAttribute="bottom" constant="8" id="TBu-Z7-7pF"/>
-                <constraint firstItem="WSM-br-B8Z" firstAttribute="leading" secondItem="8AQ-lS-mCF" secondAttribute="leading" id="V1l-Hl-yVb"/>
-                <constraint firstAttribute="bottom" secondItem="oKJ-DZ-3Zr" secondAttribute="bottom" id="WMv-T3-zlF"/>
-                <constraint firstItem="oKJ-DZ-3Zr" firstAttribute="top" secondItem="WSM-br-B8Z" secondAttribute="bottom" constant="8" id="Ym8-Px-fzm"/>
-                <constraint firstAttribute="trailing" secondItem="oKJ-DZ-3Zr" secondAttribute="trailing" id="iuV-l2-zD4"/>
-                <constraint firstAttribute="trailing" secondItem="WSM-br-B8Z" secondAttribute="trailing" id="lz7-cN-KJk"/>
+                <constraint firstAttribute="trailing" secondItem="oKJ-DZ-3Zr" secondAttribute="trailing" id="4q4-uB-7pB"/>
+                <constraint firstAttribute="bottom" secondItem="oKJ-DZ-3Zr" secondAttribute="bottom" id="6x2-0w-Rwi"/>
+                <constraint firstItem="WSM-br-B8Z" firstAttribute="leading" secondItem="8AQ-lS-mCF" secondAttribute="leading" id="7z9-GX-2MT"/>
+                <constraint firstAttribute="trailing" secondItem="WSM-br-B8Z" secondAttribute="trailing" id="GWp-7o-0Je"/>
+                <constraint firstItem="oKJ-DZ-3Zr" firstAttribute="leading" secondItem="8AQ-lS-mCF" secondAttribute="leading" id="JTb-20-JEu"/>
+                <constraint firstItem="oKJ-DZ-3Zr" firstAttribute="top" secondItem="WSM-br-B8Z" secondAttribute="bottom" constant="8" id="Kn5-OU-Uca"/>
+                <constraint firstItem="WSM-br-B8Z" firstAttribute="top" secondItem="8AQ-lS-mCF" secondAttribute="top" id="bXO-Nk-ifa"/>
+                <constraint firstAttribute="bottom" secondItem="WSM-br-B8Z" secondAttribute="bottom" constant="50" id="dXs-sk-l4q"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="detailInfoTableView" destination="WSM-br-B8Z" id="3m4-kE-IGb"/>
+                <outlet property="updateInfoBtn" destination="oKJ-DZ-3Zr" id="3eP-gj-AC9"/>
             </connections>
             <point key="canvasLocation" x="519" y="253"/>
         </view>

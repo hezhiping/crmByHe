@@ -17,7 +17,7 @@
 @property (strong,nonatomic)NSMutableArray *arrayOfResult;//多条信息数据数组，每个数组都是字典
 @property (strong,nonatomic)NSMutableDictionary *dataDic;
 @property (strong,nonatomic)UIAlertView *myalertview;
-
+@property (strong,nonatomic) softUser *user;
 
 
 
@@ -26,9 +26,9 @@
 @implementation LayoutViewController
 
 #pragma -mark crmdelegate
--(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult{
+-(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult getWhatInfo:(NSString *)getwhat{
     if ([soapresult isEqualToString:@"失败"]) {
-        UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"" message:@"加载失败" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+        UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"加载失败" message: soapresult delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
         [alertview show];
     }
     else{
@@ -37,8 +37,17 @@
         NSMutableDictionary *dataDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&erro];
         if (dataDic) {
             _arrayOfResult=[dataDic objectForKey:@"result"];
-            [self.tableView reloadData];
+
             
+            //将获取到的数据存到用户对象中去
+            if ([self.getWhat isEqualToString:@"CompanyName"]) {
+                _user.dicOfCompanyName=dataDic;
+            }
+            if ([self.getWhat isEqualToString:@"Department"]) {
+                _user.dicOfDepartment=dataDic;
+            }
+            
+            [self.tableView reloadData];
         }
         else{
             UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"" message:soapresult delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -56,21 +65,40 @@
 }
 
 //显示push过来的界面内容并选择
+//修改界面的选择信息
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _user=[softUser sharedLocaluserUserByDictionary:nil];
+    
     _soap=[[crmSoap alloc]init];
     _soap.soapDelgate=self;
-   
+    //显示客户姓名
     if ([self.getWhat isEqualToString:@"CustomerName"]) {
-        [_soap getAllCustomerName];
+        if (_user.dicOfCompanyName) {
+            _arrayOfResult=[_user.dicOfCompanyName objectForKey:@"result"];
+        }else{
+            [_soap getAllCustomerNamegetWhatInfo:@"公司名称"];
+        }
+        
     }
     
-
+    //显示部门
     if ([self.getWhat isEqualToString:@"Department"]) {
-        [_soap getAllDepartment];
+        if (_user.dicOfDepartment) {
+            _arrayOfResult=[_user.dicOfDepartment objectForKey:@"result"];
+        }
+        else{
+            [_soap getAllDepartmentgetWhatInfo:@"获取所有的部门"];
+        }
     }
     
-    
+    if (!(_user.dicOfDepartment&&_user.dicOfCompanyName)) {
+        self.myalertview=[[UIAlertView alloc]initWithTitle:@"" message:@"正在加载...." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+        
+        [self.myalertview show];
+        [self.myalertview dismissWithClickedButtonIndex:0 animated:YES];
+
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -105,13 +133,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return self.arrayOfResult.count;
 }

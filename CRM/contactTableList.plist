@@ -3,28 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>负责人</key>
-	<string>userId</string>
+	<string>User_Id</string>
 	<key>姓名</key>
-	<string>contactName</string>
+	<string>Contact_Name</string>
 	<key>生日</key>
-	<string>contactBirth</string>
+	<string>Contact_Birth</string>
 	<key>性别</key>
-	<string>contactSex</string>
+	<string>Contact_Sex</string>
 	<key>公司名称</key>
-	<string>customId</string>
+	<string>Custom_Id</string>
 	<key>职务</key>
-	<string>contactPosition</string>
+	<string>Contact_Position</string>
 	<key>电话</key>
-	<string>contactPhone</string>
+	<string>Contact_Phone</string>
 	<key>手机</key>
-	<string>contactTel</string>
+	<string>Contact_Tel</string>
 	<key>Email</key>
-	<string>mail</string>
+	<string>Contact_mail </string>
 	<key>地址</key>
-	<string>addr</string>
+	<string>Contact_Addr</string>
 	<key>备注</key>
-	<string>remark</string>
+	<string>Remark</string>
 	<key>部门</key>
-	<string>department</string>
+	<string>Department_Id</string>
 </dict>
 </plist>

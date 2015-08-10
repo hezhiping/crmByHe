@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface contactDetailInfoViewController : UIView <UITableViewDelegate,UITableViewDataSource>
+
+@interface contactDetailInfoViewController : UIView <UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *detailInfoTableView;
-- (IBAction)updateInfoBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *updateInfoBtn;
+
 
 @property (strong,nonatomic)NSMutableArray *dataArray;
 @property(strong,nonatomic)NSArray *arrayofSection;//dic中存放表节头的名字，和表中数据字段

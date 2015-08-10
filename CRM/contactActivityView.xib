@@ -13,15 +13,20 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zEi-3c-rra">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="acs-JO-p4b" id="J0a-mT-avv"/>
+                        <outlet property="delegate" destination="acs-JO-p4b" id="lnB-Sq-dRO"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="zEi-3c-rra" secondAttribute="bottom" id="K6T-Q2-iGc"/>
-                <constraint firstAttribute="trailing" secondItem="zEi-3c-rra" secondAttribute="trailing" id="oMC-BI-lbl"/>
-                <constraint firstItem="zEi-3c-rra" firstAttribute="leading" secondItem="acs-JO-p4b" secondAttribute="leading" id="tkt-l7-KIa"/>
-                <constraint firstItem="zEi-3c-rra" firstAttribute="top" secondItem="acs-JO-p4b" secondAttribute="top" id="woP-LD-h8I"/>
+                <constraint firstAttribute="bottom" secondItem="zEi-3c-rra" secondAttribute="bottom" id="USr-RQ-Vwm"/>
+                <constraint firstItem="zEi-3c-rra" firstAttribute="leading" secondItem="acs-JO-p4b" secondAttribute="leading" id="dvP-6O-xxr"/>
+                <constraint firstItem="zEi-3c-rra" firstAttribute="top" secondItem="acs-JO-p4b" secondAttribute="top" id="gES-VC-tay"/>
+                <constraint firstAttribute="trailing" secondItem="zEi-3c-rra" secondAttribute="trailing" id="s3k-eR-nor"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="activityTableView" destination="zEi-3c-rra" id="SGC-mz-TR8"/>
             </connections>

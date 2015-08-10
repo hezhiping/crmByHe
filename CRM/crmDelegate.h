@@ -10,7 +10,7 @@
 
 @protocol crmDelegate <NSObject>
 @required
--(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult;
+-(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult getWhatInfo:(NSString *)getwhat;
 -(void)doWhenHttpCollecttionFalil:(NSError *) error;
 
 @end

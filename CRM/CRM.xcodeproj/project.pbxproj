@@ -14,6 +14,7 @@
 		042B1F5F1B723BE1007D7114 /* dateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1F5E1B723BE1007D7114 /* dateToString.m */; };
 		044837931B7040A200FE78F3 /* softUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 044837921B7040A200FE78F3 /* softUser.m */; };
 		044A6CDD1B70F30000567754 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A6CDC1B70F30000567754 /* ContactViewController.m */; };
+		04973DCD1B75D976008E86F7 /* modifyContInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04973DCC1B75D976008E86F7 /* modifyContInfoTableViewController.m */; };
 		04A05ED21B6F13EB0005B637 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A05ED11B6F13EB0005B637 /* loginViewController.m */; };
 		04A05ED61B6F14EA0005B637 /* crmSoap.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A05ED51B6F14EA0005B637 /* crmSoap.m */; };
 		04A605121B708FF000E4D572 /* myCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A605101B708FF000E4D572 /* myCustomerTableViewController.m */; };
@@ -22,12 +23,12 @@
 		04B0A2331B739AC600CC2B9E /* contactTableList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B0A2321B739AC600CC2B9E /* contactTableList.plist */; };
 		04B0A2351B739D8000CC2B9E /* contactSection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B0A2341B739D8000CC2B9E /* contactSection.plist */; };
 		04B0A2381B73A56F00CC2B9E /* contactActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0A2371B73A56F00CC2B9E /* contactActivityView.m */; };
+		04BEE42D1B74AA700061A9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BEE42C1B74AA700061A9F2 /* Main.storyboard */; };
 		04E25CED1B71A57B00B1A500 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E25CEC1B71A57B00B1A500 /* AddContactViewController.m */; };
 		E7526E4C1B67504200C6468F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E4B1B67504200C6468F /* main.m */; };
 		E7526E4F1B67504200C6468F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E4E1B67504200C6468F /* AppDelegate.m */; };
 		E7526E521B67504200C6468F /* CRM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7526E501B67504200C6468F /* CRM.xcdatamodeld */; };
 		E7526E551B67504200C6468F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E541B67504200C6468F /* ViewController.m */; };
-		E7526E581B67504200C6468F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7526E561B67504200C6468F /* Main.storyboard */; };
 		E7526E5A1B67504200C6468F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7526E591B67504200C6468F /* Images.xcassets */; };
 		E7526E5D1B67504200C6468F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7526E5B1B67504200C6468F /* LaunchScreen.xib */; };
 		E7526E691B67504200C6468F /* CRMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7526E681B67504200C6468F /* CRMTests.m */; };
@@ -56,6 +57,8 @@
 		044837921B7040A200FE78F3 /* softUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = softUser.m; sourceTree = "<group>"; };
 		044A6CDB1B70F30000567754 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		044A6CDC1B70F30000567754 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		04973DCB1B75D976008E86F7 /* modifyContInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modifyContInfoTableViewController.h; sourceTree = "<group>"; };
+		04973DCC1B75D976008E86F7 /* modifyContInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modifyContInfoTableViewController.m; sourceTree = "<group>"; };
 		04A05ED01B6F13EB0005B637 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		04A05ED11B6F13EB0005B637 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		04A05ED41B6F14EA0005B637 /* crmSoap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crmSoap.h; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		04B0A2341B739D8000CC2B9E /* contactSection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = contactSection.plist; sourceTree = "<group>"; };
 		04B0A2361B73A56F00CC2B9E /* contactActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contactActivityView.h; sourceTree = "<group>"; };
 		04B0A2371B73A56F00CC2B9E /* contactActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = contactActivityView.m; sourceTree = "<group>"; };
+		04BEE42C1B74AA700061A9F2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04E25CEB1B71A57B00B1A500 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		04E25CEC1B71A57B00B1A500 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		E7526E461B67504200C6468F /* CRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +84,6 @@
 		E7526E511B67504200C6468F /* CRM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRM.xcdatamodel; sourceTree = "<group>"; };
 		E7526E531B67504200C6468F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E7526E541B67504200C6468F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E7526E571B67504200C6468F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7526E591B67504200C6468F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7526E5C1B67504200C6468F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E7526E621B67504200C6468F /* CRMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +145,8 @@
 				044A6CDC1B70F30000567754 /* ContactViewController.m */,
 				04E25CEB1B71A57B00B1A500 /* AddContactViewController.h */,
 				04E25CEC1B71A57B00B1A500 /* AddContactViewController.m */,
+				04973DCB1B75D976008E86F7 /* modifyContInfoTableViewController.h */,
+				04973DCC1B75D976008E86F7 /* modifyContInfoTableViewController.m */,
 				04A7BEAF1B72E9B5008012B0 /* LayoutViewController.h */,
 				04A7BEB01B72E9B5008012B0 /* LayoutViewController.m */,
 			);
@@ -197,9 +202,9 @@
 			children = (
 				E7526E4D1B67504200C6468F /* AppDelegate.h */,
 				E7526E4E1B67504200C6468F /* AppDelegate.m */,
+				04BEE42C1B74AA700061A9F2 /* Main.storyboard */,
 				E7526E531B67504200C6468F /* ViewController.h */,
 				E7526E541B67504200C6468F /* ViewController.m */,
-				E7526E561B67504200C6468F /* Main.storyboard */,
 				E7526E591B67504200C6468F /* Images.xcassets */,
 				E7526E5B1B67504200C6468F /* LaunchScreen.xib */,
 				E7526E501B67504200C6468F /* CRM.xcdatamodeld */,
@@ -315,9 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				041C6AA21B7386B300B059CB /* contactDetailInfoView.xib in Resources */,
-				E7526E581B67504200C6468F /* Main.storyboard in Resources */,
 				04B0A2331B739AC600CC2B9E /* contactTableList.plist in Resources */,
 				E7526E5D1B67504200C6468F /* LaunchScreen.xib in Resources */,
+				04BEE42D1B74AA700061A9F2 /* Main.storyboard in Resources */,
 				E7526E5A1B67504200C6468F /* Images.xcassets in Resources */,
 				041C6AA01B73867100B059CB /* contactActivityView.xib in Resources */,
 				04A605131B708FF000E4D572 /* myCustomerTableViewController.xib in Resources */,
@@ -344,6 +349,7 @@
 				04A7BEB11B72E9B5008012B0 /* LayoutViewController.m in Sources */,
 				041C6AA51B738BBE00B059CB /* contactDetailInfoViewController.m in Sources */,
 				04B0A2381B73A56F00CC2B9E /* contactActivityView.m in Sources */,
+				04973DCD1B75D976008E86F7 /* modifyContInfoTableViewController.m in Sources */,
 				04A05ED21B6F13EB0005B637 /* loginViewController.m in Sources */,
 				040F9A711B74362A00B8FDD3 /* InspectContactDetailInfoViewController.m in Sources */,
 				04E25CED1B71A57B00B1A500 /* AddContactViewController.m in Sources */,
@@ -376,14 +382,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E7526E561B67504200C6468F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7526E571B67504200C6468F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E7526E5B1B67504200C6468F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

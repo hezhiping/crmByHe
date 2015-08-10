@@ -7,11 +7,13 @@
 //
 
 #import "contactDetailInfoViewController.h"
+#import "softUser.h"
 
 @implementation contactDetailInfoViewController
 
 - (void)awakeFromNib
 {
+    //contactTableList.pilst中的value值对应数据库中的字段
     _arrayofSection=[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"contactSection" ofType:@"plist"]];
     
     NSLog(@"%lu",(unsigned long)_arrayofSection.count);
@@ -19,12 +21,11 @@
     _dicOfContactTable=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"contactTableList" ofType:@"plist" ]];
 }
 
-- (IBAction)updateInfoBtn:(id)sender {
-    //发送一个名字为updateVCToModifyVC的通知
+- (IBAction)updateContactInfoBtn:(id)sender {
+    //发送一个名字为updateVCToModifyVC的通知到InspectContactDetailInfoViewController界面
     [[NSNotificationCenter defaultCenter] postNotificationName:@"updateVCToModifyVC" object:nil userInfo:nil];
   
 }
-
 
 #pragma tableview协议的required方法
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -51,12 +52,20 @@
     static NSString *identifier=@"cell";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     NSDictionary *dic=[_arrayofSection objectAtIndex:indexPath.section];
     NSArray *array=[dic objectForKey:@"sectionData"];
     NSString *mainStr=[array objectAtIndex:indexPath.row];
     cell.textLabel.text=mainStr;
+    
+    NSString *search=[_dicOfContactTable objectForKey:mainStr];
+    if ([mainStr isEqualToString:@"负责人"]) {
+        softUser *localuser=[softUser sharedLocaluserUserByDictionary:nil];
+        cell.detailTextLabel.text=localuser.userName;
+        return cell;
+    }
+    
     NSString *str=[_dataDicOFContact objectForKey:[_dicOfContactTable objectForKey:mainStr]];
     cell.detailTextLabel.text=str;
     return cell;

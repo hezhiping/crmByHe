@@ -23,18 +23,18 @@
     _soap=[[crmSoap alloc]init];
     _soap.soapDelgate=self;
 //    [_soap checkAccount:self.userIdText.text Pwd:self.userPwdText.text];
-    [_soap checkAccount:@"123" Pwd:@"123"];
+    [_soap checkAccount:@"123" Pwd:@"123" getWhatInfo:@"检查用户"];
     _myalrtview=[[UIAlertView alloc]initWithTitle:nil message:@"正在登陆》》》" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
     [_myalrtview show];
 }
 #pragma -mark crmdelegate
--(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult{
+-(void)doWhenEcardGetInfoFromWebServier:(NSString *)soapresult getWhatInfo:(NSString *)getwhat{
     if ([soapresult isEqualToString:@"成功"]) {
         [self performSegueWithIdentifier:@"signIn" sender:self];
       
         self.isLogin=YES;//设置登录成功
 //        [self.soap getUserInfoByUserIdAndUserPWd:self.userIdText.text Pwd:self.userPwdText.text];//网络请求获取用户具体信息
-        [self.soap getUserInfoByUserIdAndUserPWd:@"123" Pwd:@"123"];
+        [self.soap getUserInfoByUserIdAndUserPWd:@"123" Pwd:@"123" getWhatInfo:@"获取用户信息"];
     }
     else{
         if ([soapresult isEqualToString:@"失败"]&&!_isLogin) {//如果返回结果是失败而且还没有登录成功
