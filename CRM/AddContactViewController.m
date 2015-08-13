@@ -119,7 +119,7 @@
     int uid=localUser.userId.intValue;
     NSString *uName=localUser.userName;
     NSString *cDate=[dateToString dateToString:[NSDate date]];
-#warning 联系人的id应该是获取来的
+    //添加联系人的方法
     [_soap addContact:nil Name:_nameText.text customId:customerId.intValue userId:uid departmentId:departId.intValue  contactSex:_sexText.text contactBirth:_birthText.text contactPosition:_positionText.text contactPhone:_phoneText.text contactTel:_telText.text mail:_emailText.text Addr:_addrText.text Remark:_remark.text department:@"" cDate:cDate cPerson:uName mDate:cDate mPerson:uName getWhatInfo:@"添加联系人"];
     
 }

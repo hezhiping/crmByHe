@@ -19,9 +19,10 @@
 @property(strong,nonatomic)NSString *userDepartment;
 @property(strong,nonatomic)NSString *userPosition;
 
-
-@property(strong,nonatomic)NSMutableDictionary *dicOfDepartment;//存取部门信息
-@property(strong,nonatomic)NSMutableDictionary *dicOfCompanyName;//存储公司信息
+//存取部门信息
+@property(strong,nonatomic)NSMutableDictionary *dicOfDepartment;
+//存储公司信息
+@property(strong,nonatomic)NSMutableDictionary *dicOfCompanyName;
 
 
 

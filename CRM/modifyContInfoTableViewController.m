@@ -31,6 +31,7 @@
 @property (strong,nonatomic) crmSoap *soap;
 @property (strong,nonatomic) NSString *departmentId;
 @property (strong,nonatomic) NSString *companyNameId;
+@property (strong,nonatomic) NSString *customerName;
 
 
 @property(strong,nonatomic)NSDictionary *departmentDic;//包涵一条部门的信息
@@ -48,6 +49,7 @@
     NSString *dateTostr=[_contactDic objectForKey:@"Contact_Birth"];
     NSDate *birDate=[dateToString webDateToString:dateTostr];
     NSString *dateStr=[dateToString dateToString:birDate];
+    
     NSString *contId=[_contactDic objectForKey:@"Contact_Id"];
     softUser *localuser=[softUser sharedLocaluserUserByDictionary:nil];
     int userid=localuser.userId.intValue;
@@ -82,13 +84,11 @@
             _dicOfcompanyName=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
            
             _companyNameLabel.text=[_dicOfcompanyName objectForKey:@"Customer_Name"];
-            //
-            _companyNameId=[_dicOfcompanyName objectForKey:@"Customer_Id"];
-           //  NSLog(@"%@",[_dicOfcompanyName description]);
+            _companyNameId=[_dicOfcompanyName objectForKey:@"Custom_Id"];
             [self displayView:_contactDic];
             
         }
-        if ([getwhat isEqualToString:@"获取一个部门"]) {
+        if ([getwhat isEqualToString:@"获取一个部门名称"]) {
             NSData *data=[soapresult dataUsingEncoding:NSUTF8StringEncoding];
             NSError *error=nil;
             _dicOfDepartment=(NSMutableDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
@@ -112,17 +112,19 @@
     [super viewDidLoad];
     
     _departmentId=[_contactDic objectForKey:@"Department_Id"];
+#warning <#message#>
     _companyNameId=[_contactDic objectForKey:@"Custom_Id"];
+    _customerName=[_dicOfcompanyName objectForKey:@"Customer_Name"];
 
-    //判断本地用户对象中的部门行业级别信息是否为空，若为空则取网络上请求，若不为空则不请求
-    if (!_dicOfcompanyName)
+    //判断本地用户对象中的部门信息是否为空，若为空则取网络上请求，若不为空则不请求
+    if (!_companyNameId)
     {
         crmSoap *soap1=[[crmSoap alloc]init];
         soap1.soapDelgate=self;
         NSString *str1=[_contactDic objectForKey:@"Custom_Id"];
         NSLog(@"%@",[_contactDic description]);
         _companyNameId=str1;
-        [soap1 getCustomerNameByid:str1 getWhatInfo:@"获取公司名称"];
+        [soap1 getCustomerNameByid:str1 getWhatInfo:@"获取一个公司名称"];
     }
     
     
@@ -131,8 +133,8 @@
         crmSoap *soap2=[[crmSoap alloc]init];
         soap2.soapDelgate=self;
         NSString *str2=[_contactDic objectForKey:@"Custom_Id"];
-        _companyNameId=str2;
-        [soap2 getCustomerNameByid:str2 getWhatInfo:@"获取部门名称"];
+        _departmentId=str2;
+        [soap2 getCustomerNameByid:str2 getWhatInfo:@"获取一个部门名称"];
     }
     
     //注册通知，接收LayoutViewController发送过来的通知=接收通知,当选择某个值时将发送这些通知，这边注册通知，接受传过来的数据
@@ -145,17 +147,21 @@
 #pragma -mark 设置公司名称，部门label的值
 -(void)SetcompanyNameLabelValue:(NSNotification *) notification
 {
-    _dicOfcompanyName=(NSMutableDictionary *)[notification userInfo];//为什么要注释？
-    self.companyNameLabel.text=[_dicOfcompanyName  objectForKey:@"Customer_Name"];
-    _companyNameId=[_dicOfcompanyName objectForKey:@"Customer_Id"];
+//    _dicOfcompanyName=(NSMutableDictionary *)[notification userInfo];
+    _companyNameLabel.text=[[notification userInfo]  objectForKey:@"Customer_Name"];
+    NSLog(@"%@",[_dicOfcompanyName description]);
+    _companyNameId=[[notification userInfo] objectForKey:@"Customer_Id"];
+    
+   
     
 }
 
 -(void)SetDepartmentLabelLabelValue:(NSNotification *) notification
 {
-    _dicOfDepartment=(NSMutableDictionary *)[notification userInfo];
-    self.departmentLabel.text=[_dicOfDepartment objectForKey:@"Department_Name"];
-    _departmentId=[_dicOfDepartment objectForKey:@"Department_Id"];
+
+//    _dicOfDepartment=(NSMutableDictionary *)[notification userInfo];
+    _departmentLabel.text=[[notification userInfo] objectForKey:@"Department_Name"];
+    _departmentId=[[notification userInfo] objectForKey:@"Department_Id"];
 }
 
 
@@ -167,8 +173,15 @@
 //将详细资料界面的联系人资料展示到tableview 上
 -(void)displayView:(NSMutableDictionary *)dic
 {
-    _companyNameLabel.text=[_dicOfcompanyName objectForKey:@"Customer_Id"];
-    _departmentLabel.text=[_dicOfDepartment objectForKey:@"Department_Id"];
+    if (_companyNameId) {
+        _companyNameLabel.text=_companyNameId;
+    }
+    
+    //_companyNameLabel.text=[_dicOfcompanyName objectForKey:@"Customer_Id"];
+    if (_departmentId) {
+        _departmentLabel.text=_departmentId;
+    }
+//    _departmentLabel.text=[_dicOfDepartment objectForKey:@"Department_Id"];
     _nameText.text=[dic objectForKey:@"Contact_Name"];
     _birthText.text=[dic objectForKey:@"Contact_Birth"];
     _sexText.text=[dic objectForKey:@"Contact_Sex"];

@@ -77,7 +77,7 @@
         if (_user.dicOfCompanyName) {
             _arrayOfResult=[_user.dicOfCompanyName objectForKey:@"result"];
         }else{
-            [_soap getAllCustomerNamegetWhatInfo:@"公司名称"];
+            [_soap getAllCustomerNamegetWhatInfo:@"获取一个公司名称"];
         }
         
     }

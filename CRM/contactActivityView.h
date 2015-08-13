@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 crmTeam. All rights reserved.
 //
 
+//联系人的活动记录
 #import <UIKit/UIKit.h>
 
 @interface contactActivityView : UIView<UITableViewDataSource,UITableViewDelegate>

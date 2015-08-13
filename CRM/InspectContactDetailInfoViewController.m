@@ -31,6 +31,7 @@
 
 @implementation InspectContactDetailInfoViewController
 
+//segment点击选择显示的界面
 - (IBAction)changDataSegment:(UISegmentedControl *)sender {
     
     switch (self.mySegment.selectedSegmentIndex) {
@@ -49,25 +50,30 @@
         default:
             break;
     }
-    CATransition *animation=[CATransition animation];
     
+    //动画效果
+    CATransition *animation=[CATransition animation];
     animation.type=@"cube"; //cube rotate
     animation.duration=0.7;
     //把空白的view加入到动画中
     [self.blankDataView.layer addAnimation:animation forKey:nil];
 }
 
-//通知的方法
+//从详细界面到修改界面通知的方法
 -(void)updateVCToModifyVC
 {
     if (_contactDic)
     {
+        //main标识符
         UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //updateVC标识符
         modifyContInfoTableViewController *updateVC=[mainStoryboard instantiateViewControllerWithIdentifier:@"updateVC"];
         updateVC.contactDic=_contactDic;
+        
         softUser *localuser=[softUser sharedLocaluserUserByDictionary:nil];
         if (localuser.dicOfDepartment)
         {
+            //遍历
             for (NSMutableDictionary *dic in [localuser.dicOfDepartment objectForKey:@"result"])
             {
                 if ([[_contactDic objectForKey:@"Department_Id"] isEqualToString:[dic objectForKey:@"Department_Id"]])
@@ -100,6 +106,7 @@
     
     _soap1=[[crmSoap alloc]init];
     _soap1.soapDelgate=self;
+    //把详细资料xib加入到视图中
     _detailInfoView=[[[NSBundle mainBundle] loadNibNamed:@"contactDetailInfoView" owner:nil options:nil]lastObject];
     _detailInfoView.frame=_blankDataView.bounds;
     [_blankDataView addSubview:_detailInfoView];
@@ -107,6 +114,7 @@
     
     _soap2=[[crmSoap alloc]init];
     _soap2.soapDelgate=self;
+    //把活动记录xib加入到视图中
     _activityView=[[[NSBundle mainBundle]loadNibNamed:@"contactActivityView" owner:nil options:nil]lastObject];
     _activityView.frame=_blankDataView.bounds;
     [_blankDataView addSubview:_activityView];
@@ -130,6 +138,7 @@
             [_detailInfoView.detailInfoTableView reloadData];
             
                    }
+        
         
         if (![getwhat isEqualToString:@"详细资料"]) {
            

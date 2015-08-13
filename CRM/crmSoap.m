@@ -147,7 +147,7 @@
                        "</updateContact>"
                        
                        "</soap12:Body>"
-                       "</soap12:Envelope>",contactId,name,uId,0,departmentId,contactSex,contactBirth,contactPosition,contactPhone,contactTel,mail,addr,remark,department,cdate,cperson,mdate,mPerson];
+                       "</soap12:Envelope>",contactId,name,uId,customId,departmentId,contactSex,contactBirth,contactPosition,contactPhone,contactTel,mail,addr,remark,department,cdate,cperson,mdate,mPerson];
     // 设置我们之后解析XML时用的关键字，与响应报文中Body标签之间的getMobileCodeInfoResult标签对应
     matchingElement = @"updateContactResult";
     self.getWhatInfo=getwhatinfo;

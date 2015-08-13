@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class modifyContInfoTableViewController;
 
+
 @interface dateToString : NSObject
 +(NSString *)dateToString:(NSDate *)date;
 +(NSDate *)webDateToString:(NSString *)dateString;

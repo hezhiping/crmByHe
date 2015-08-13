@@ -11,6 +11,7 @@
 #import "modifyContInfoTableViewController.h"
 
 @implementation dateToString
+//将字符串格式转换为datetime类型的类方法
 +(NSString *)dateToString:(NSDate *)date
 {
     NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
@@ -19,6 +20,7 @@
     return datestring;
 }
 
+//将datetime类型转换成字符串类型的类方法
 +(NSDate *)webDateToString:(NSString *)dateString
 {
     NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
